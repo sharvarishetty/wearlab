@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Sign Up</title>
+  <style>
+    
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url("images/100\ Pretty\ Pink\ Wallpapers\ For\ Phone\ -\ The\ XO\ Factor.jpeg") no-repeat center center/cover;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 900px;
+      height: 500px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      overflow: hidden;
+      margin: 50px auto;
+    }
+
+    .video-section {
+      flex: 1;
+      position: relative;
+    }
+
+    .video-section video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #5b2ac7;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section input {
+      margin-bottom: 15px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .form-section button {
+      padding: 12px;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #ff7f7f, #ffb3ff);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .form-section button:hover {
+      transform: scale(1.05);
+    }
+
+    .form-section p {
+      margin-top: 10px;
+      font-size: 1rem;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .form-section p a {
+      color: #5b2ac7;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-buttons button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      font-size: 0.9rem;
+      background: linear-gradient(135deg, #f5e6fa, #f5d6ff);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .social-buttons button img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .social-buttons button:hover {
+      background: linear-gradient(135deg, #f5d6ff, #f5e6fa);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="video-section">
+      <video autoplay muted loop id="bg-video">
+        <source src="images/login.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="form-section">
+      <!-- Login Form -->
+      <div id="login-form">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a onclick="toggleForm()">Sign Up</a></p>
+        <div class="social-buttons">
+          <button><img src="images/google-icon.jpg" alt="Google">Sign in with Google</button>
+          <button><img src="images/apple-icon.jpg" alt="Apple">Sign in with Apple</button>
+        </div>
+      </div>
+      <!-- Sign Up Form -->
+      <div id="signup-form" class="hidden">
+        <h1>Sign Up</h1>
+        <form action="/register" method="POST">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a onclick="toggleForm()">Login</a></p>
+        <div class="social-buttons">
+          <button><img src="images/google-icon.png" alt="Google">Sign up with Google</button>
+          <button><img src="images/apple-icon.png" alt="Apple">Sign up with Apple</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      loginForm.classList.toggle('hidden');
+      signupForm.classList.toggle('hidden');
+    }
+
+    const video = document.getElementById('bg-video');
+    video.addEventListener('ended', () => {
+      video.currentTime = 0;
+      video.playbackRate = -1; // Reverse playback
+      video.play();
+      setTimeout(() => {
+        video.playbackRate = 1; // Restore normal playback
+      }, video.duration * 1000);
+    });
+  </script>
+</body>
+</html>

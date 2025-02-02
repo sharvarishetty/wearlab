@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WearLab - The Future of Fashion</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #5b2ac7, #ff9a9e);
+      color: #fff;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      text-align: center;
+      scroll-snap-align: start;
+      position: relative;
+      padding: 50px;
+    }
+    .section img {
+      width: 400px;
+      height: auto;
+      margin: 15px;
+      border-radius: 15px;
+      transition: transform 0.4s ease-in-out;
+    }
+    .section img:hover {
+      transform: scale(1.15) rotate(2deg);
+      cursor: pointer;
+    }
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero .content {
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 80px;
+      font-weight: 700;
+      text-shadow: 5px 5px 30px rgba(255, 255, 255, 0.5);
+      font-family: 'Orbitron', sans-serif;
+      animation: flicker 1.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div>WearLab</div>
+    <a href="login.html">Login / Sign In</a>
+  </div>
+  
+  <div class="hero">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="images/manequin.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="content">
+        <h1>Welcome to WearLab</h1>
+        <p>Experience the future of AI-powered fashion. Your style, your way.</p>
+      </div>
+  </div>
+  <div class="section intro">
+    <h1>Take a Look!</h1>
+    <p>Explore our revolutionary AI-powered fashion features, crafted just for you. Scroll down to discover more!</p>
+  </div>
+
+  <div class="section feature1">
+    <img src="images/outfit1.jpg" alt="Outfit 1">
+    <h1>AI Outfit Generator</h1>
+    <img src="images/outfit2.jpg" alt="Outfit 2">
+  </div>
+  <div class="section feature2">
+    <img src="images/stylist1.jpg" alt="Stylist 1">
+    <h1>Virtual Stylist</h1>
+    <img src="images/stylist2.jpg" alt="Stylist 2">
+  </div>
+  <div class="section feature3">
+    <img src="images/skintone1.jpg" alt="Skin Tone 1">
+    <h1>Color & Skin Tone Analysis</h1>
+    <img src="images/skintone2.jpg" alt="Skin Tone 2">
+  </div>
+  <div class="section feature4">
+    <img src="images/chatbot1.jpg" alt="Chatbot 1">
+    <h1>Cultural Chatbot</h1>
+    <img src="images/chatbot2.jpg" alt="Chatbot 2">
+  </div>
+  <div class="section feature5">
+    <img src="images/community1.jpg" alt="Community Dashboard 1">
+    <h1>Community Dashboard</h1>
+    <img src="images/community2.jpg" alt="Community Dashboard 2">
+  </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearLab - Cultural Chatbot</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("images/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #4a2c2a;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #f8ebe0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        header a {
+            text-decoration: none;
+            color: #4a2c2a;
+            font-weight: 700;
+        }
+        .description, .highlights, .chatbot {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        #map {
+            height: 400px;
+            width: 60%;
+            
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .highlights img {
+            width: 180px;
+            height: 120px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .highlights img:hover {
+            transform: scale(1.1);
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 4px;
+            right: 10px;
+            width: 200px;
+            background-color: #d4a373;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .chatbot input {
+            font-size: 16px;
+            padding: 10px;
+            width: calc(100% - 20px);
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+            text-align: center;
+        }
+        .chatbot button {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: none;
+            background-color: #6d4c41;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>WearLab - Cultural Wonders</div>
+    <div>
+        <a href="#">Home</a>
+        <img src="user-profile.jpg" alt="User Profile" width="40" height="40">
+    </div>
+</header>
+
+<div id="map"></div>
+
+<div class="description">
+    <h2>Discover India's Rich Culture</h2>
+    <p>India is a mosaic of traditions, colors, and diversity. From the regal palaces of Rajasthan to the rhythmic beats of Kathak and Bharatanatyam, immerse yourself in the vibrant cultural heritage that makes India unique.</p>
+</div>
+
+<div class="highlights">
+    <h3>Cultural Gems of India</h3>
+    <img src="taj-mahal.jpg" alt="Taj Mahal" title="Taj Mahal">
+    <img src="holi-festival.jpg" alt="Holi Festival" title="Holi Festival">
+    <img src="bollywood.jpg" alt="Bollywood Films" title="Bollywood Films">
+    <img src="indian-cuisine.jpg" alt="Indian Cuisine" title="Indian Cuisine">
+</div>
+
+<div class="chatbot">
+    <div id="chat-log" class="chat-log"></div>
+    <input type="text" id="user-input" placeholder="Ask me anything">
+    <button onclick="sendMessage()">Send 🚀</button>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([20.5937, 78.9629], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
+    var marker;
+    map.on('click', function(e) {
+        if (marker) {
+            map.removeLayer(marker);
+        }
+        marker = L.marker(e.latlng).addTo(map);
+        reverseGeocode(e.latlng);
+    });
+
+    function reverseGeocode(latlng) {
+        var locationName = "Mumbai";
+        document.getElementById('chat-log').innerHTML += `<div class='chat-message'>Location selected: ${locationName}</div>`;
+        fetchTrendInfo(locationName);
+    }
+
+    function fetchTrendInfo(locationName) {
+        var trendInfo = `Latest trends in ${locationName} include traditional arts, textiles, and heritage tourism.`;
+        document.getElementById('chat-log').innerHTML += `<div class='chat-message'>${trendInfo}</div>`;
+    }
+
+    function sendMessage() {
+        var input = document.getElementById('user-input').value;
+        document.getElementById('chat-log').innerHTML += `<div class='chat-message'>You: ${input}</div>`;
+        document.getElementById('user-input').value = '';
+    }
+</script>
+
+</body>
+</html>

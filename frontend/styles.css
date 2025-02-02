@@ -1,0 +1,328 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #edb2fe;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.content {
+  z-index: 2;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.5em;
+}
+
+.feature-section {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.feature-section img {
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-section .text {
+  max-width: 400px;
+  margin: 20px;
+}
+
+.feature-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Feature-Specific Background Colors */
+.feature-outfit { background-color: #e0d9ff; }
+.feature-stylist { background-color: #b9d6c0; }
+.feature-community { background-color: #badbf3; }
+.feature-chatbot { background-color: #e6646c; color: white; }
+.feature-skintone { background-color: #e6b664; }
+
+
+  /* Login Page Styles */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  p a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  /* Outfit Generator Page Styles */
+  body {
+    background-color: #ffccff;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.mood-selection, .outfit-display, .color-suggestions {
+    background-color: #ff99cc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+}
+
+button {
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ff66b2;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/*sdfghjkl;'*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  color: white;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 50;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateY(50px); /* Adjust this value as needed */
+}
+
+.hero-content {
+  position: relative;
+    z-index: 1;
+    text-align: left; /* Align text to the left */
+    padding-left: 60%; /* Adjust as needed to move content more to the left */
+    width: 100%;
+}
+
+button {
+  background-color: #ff7a85;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-self: start; /* Align the button to the start of the flex container */
+}
+
+
+
+.info-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  width: 30%;
+  margin: 10px;
+}
+
+.color-palette {
+  display: flex;
+}
+
+.color-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.analysis-scenes {
+  padding: 20px;
+}
+
+.scenes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.scene {
+  text-align: center;
+  margin: 10px;
+}
+
+.scene img {
+  width: 100px; /* Adjust according to your layout */
+  height: 100px; /* Adjust for maintaining aspect ratio */
+  border-radius: 50%;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+

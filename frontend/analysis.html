@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Skin Tone Color Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Korean Skin Tone Color Analysis</h1>
+    </header>
+    <main>
+        <section id="upload-section">
+            <input type="file" id="imageUpload" accept="image/*">
+            <button id="analyzeButton">Analyze</button>
+            <div id="imagePreview"></div>
+        </section>
+        <section id="results-section">
+            <h2>Analysis Results</h2>
+            <div id="results"></div>
+        </section>
+        <section id="checklist-section">
+            <h2>Warm/Cool Tone Checklist</h2>
+            <form id="checklistForm">
+                <label><input type="checkbox" name="warm" value="1"> I tan easily when under the sun</label><br>
+                <label><input type="checkbox" name="cool" value="1"> I get red when under the sun</label><br>
+                <label><input type="checkbox" name="warm" value="1"> I suit gold jewelry more</label><br>
+                <label><input type="checkbox" name="cool" value="1"> I suit silver jewelry more</label><br>
+                <label><input type="checkbox" name="warm" value="1"> I feel like I have more yellow undertones</label><br>
+                <label><input type="checkbox" name="cool" value="1"> I feel like I have more red undertones</label><br>
+                <label><input type="checkbox" name="warm" value="1"> I feel like I look better with peachy/orangey makeup</label><br>
+                <label><input type="checkbox" name="cool" value="1"> I feel like I look better with pinky/purple makeup</label><br>
+                <button type="submit">Submit Checklist</button>
+            </form>
+        </section>
+    </main>
+    <script src="script/analysis.js"></script>
+</body>
+</html>
